@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#FFFFFF"
+    android:gravity="center">
+
+    <!-- Header Bar -->
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#1E90FF"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="20dp"
+        android:text="My Photo Viewer App"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp" /> <!-- Adjusted spacing -->
+
+    <!-- Main Content (Image and Buttons) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- FrameLayout to overlap two ImageViews -->
+        <FrameLayout
+            android:layout_width="450dp"
+            android:layout_height="450dp">
+
+            <!-- ImageView for the current image -->
+            <ImageView
+                android:id="@+id/currentImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name" />
+
+            <!-- ImageView for the incoming image -->
+            <ImageView
+                android:id="@+id/nextImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/imageCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="1/3"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Buttons layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Button to show the previous image -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp">
+                <ImageButton
+                    android:id="@+id/buttonPrevious"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="#ff1493"
+                    android:contentDescription="Previous"
+                    android:src="@drawable/ic_previous"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BACK"
+                    android:textColor="#ff1493"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Button to show the next image -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp">
+                <ImageButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="#32CD32"
+                    android:contentDescription="Next"
+                    android:src="@drawable/ic_next"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEXT"
+                    android:textColor="#32CD32"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Button to reset to the first image -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/buttonReset"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="#ff9500"
+                    android:contentDescription="Reset"
+                    android:src="@drawable/ic_restart"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESET"
+                    android:textColor="#ff9500"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer Bar -->
+    <TextView
+        android:id="@+id/footerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E90FF"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Morgan Madsen 2024"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+</LinearLayout>
